@@ -37,6 +37,7 @@ Extension (Node.js)  ←→  Replicants (WebSocket sync)  ←→  Browser (Dashb
 ### Build pipeline
 
 A custom Vite plugin (`vite/vite-plugin-nodecg.mts`) orchestrates the entire build:
+
 - Discovers graphics/dashboard views via globs
 - Generates HTML files from `vite/template.html`
 - Builds the extension via Rollup (with esbuild + node-externals plugins)

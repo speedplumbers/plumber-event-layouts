@@ -1,14 +1,10 @@
 {
-    "extends": "../../tsconfig.json",
-    "compilerOptions": {
-        "jsx": "react",
-        "lib": ["dom"],
-        "noEmit": true,
-        "types": ["node", "express", "nodecg/types/augment-window"]
-    },
-    "include": [
-        "**/*.ts",
-        "**/*.tsx",
-        "../nodecg/**/*.ts"
-    ]
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"jsx": "react",
+		"lib": ["dom"],
+		"noEmit": true,
+		"types": ["node", "express", "nodecg/types/augment-window"]
+	},
+	"include": ["**/*.ts", "**/*.tsx", "../nodecg/**/*.ts"]
 }
