@@ -1,12 +1,22 @@
-import React from "react";
-import {render} from "../../render";
+import { render } from "../../render";
+import { Timer } from "../Timer";
+import { ScheduleList } from "../ScheduleList"
+import { useUpcomingRunData } from "../../hooks"
+import { BaseLayout } from "../BaseLayout"
 
 const App = () => {
-	return (
-		<div id='container'>
-			<div>This is example.</div>
-		</div>
-	);
+    // const upcomingRunData = useUpcomingRunData();
+    return (
+        <>
+            <BaseLayout />
+        </>
+        // <div id='container' style={{ left: 0, top: 0, position: "absolute", width: "1920px", height: "1080px", color: 'black' }}>
+        //     <div>This is example.</div>
+        //     <Timer />
+        //     <ScheduleList />
+        //     <div>{upcomingRunData?.game}</div>
+        // </div>
+    );
 };
 
 render(<App />);

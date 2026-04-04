@@ -1,5 +1,4 @@
 import {useReplicant} from "@nodecg/react-hooks";
-import React from "react";
 import {render} from "../../render";
 
 const App = () => {
