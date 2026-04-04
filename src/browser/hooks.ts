@@ -1,31 +1,37 @@
-import { useReplicant } from "@nodecg/react-hooks"
-import { RunDataArray, RunDataActiveRun, Timer } from "../types/speedcontrol"
+import {useReplicant} from "@nodecg/react-hooks";
+import {RunDataActiveRun, RunDataArray, Timer} from "../types/speedcontrol";
 
 export const useRunDataArray = () => {
-    const [runDataArray] = useReplicant<RunDataArray>("runDataArray", { bundle: "nodecg-speedcontrol" })
-    if (runDataArray == null) return;
-    return runDataArray
-}
+	const [runDataArray] = useReplicant<RunDataArray>("runDataArray", {
+		bundle: "nodecg-speedcontrol",
+	});
+	if (runDataArray == null) return;
+	return runDataArray;
+};
 
 export const useTimer = () => {
-    const [timer] = useReplicant<Timer>("timer", { bundle: "nodecg-speedcontrol" })
-    if (timer == null) return;
-    return timer
-}
+	const [timer] = useReplicant<Timer>("timer", {bundle: "nodecg-speedcontrol"});
+	if (timer == null) return;
+	return timer;
+};
 
 export const useRunDataActiveRun = () => {
-    const [runDataActiveRun] = useReplicant<RunDataActiveRun>("runDataActiveRun", { bundle: "nodecg-speedcontrol" });
+	const [runDataActiveRun] = useReplicant<RunDataActiveRun>(
+		"runDataActiveRun",
+		{bundle: "nodecg-speedcontrol"},
+	);
 
-    if (runDataActiveRun == null) return;
-    return runDataActiveRun
-
-}
+	if (runDataActiveRun == null) return;
+	return runDataActiveRun;
+};
 
 export const useUpcomingRunData = () => {
-    const runDataActiveRun = useRunDataActiveRun();
-    const runDataArray = useRunDataArray();
+	const runDataActiveRun = useRunDataActiveRun();
+	const runDataArray = useRunDataArray();
 
-    if (runDataActiveRun == null) return;
-    const upcomingRunData = runDataArray?.filter((runData) => runData.id == runDataActiveRun?.id + 1)[0]
-    return upcomingRunData
-}
+	if (runDataActiveRun == null) return;
+	const upcomingRunData = runDataArray?.filter(
+		(runData) => runData.id == runDataActiveRun?.id + 1,
+	)[0];
+	return upcomingRunData;
+};
