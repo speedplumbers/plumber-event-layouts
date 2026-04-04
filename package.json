@@ -2,15 +2,17 @@
 	"name": "plumber-event-layouts",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
 	"scripts": {
 		"start": "npx nodecg start",
 		"dev": "run-p dev:*",
 		"dev:tsc": "tsc -b src/extension -w --preserveWatchOutput",
 		"dev:vite": "vite",
 		"dev:nodecg": "npx nodecg start",
+		"typecheck": "tsc -b src/extension --noEmit && tsc -p src/browser/tsconfig.json",
 		"generate-schema-types": "nodecg schema-types -o ./src/nodecg/generated",
 		"build": "vite build",
+		"format": "prettier --write src/ schemas/ package.json",
+		"format:check": "prettier --check .",
 		"clean": "trash node_modules/.cache && trash dashboard && trash extension && trash db && trash graphics"
 	},
 	"keywords": [],
